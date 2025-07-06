@@ -1,0 +1,251 @@
+/* Importação de fonte do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+  --primary-color: #007bff; /* Azul vibrante, similar ao do SENAI */
+  --secondary-color: #6c757d; /* Cinza para textos secundários */
+  --background-color: #f8f9fa; /* Fundo bem claro */
+  --text-color: #343a40; /* Cor padrão para o texto */
+  --highlight-lab: #dc3545; /* Vermelho para LAB365 */
+  --highlight-senai: #004d40; /* Verde escuro para SENAI (ou ajuste para o azul oficial se preferir) */
+  --border-radius: 8px;
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.container {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+
+  max-width: 800px; /* Aumentado um pouco para a imagem */
+  width: 90%;
+  box-sizing: border-box;
+}
+blockquote {
+    border-left: 3px solid var(--primary-color);
+    margin: 0;
+    padding: 1rem 3rem;
+    border-radius: 5px;
+}
+.header {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--primary-color);
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: var(--text-color);
+  font-weight: 700;
+}
+
+.header h2 {
+  font-size: 1.8em;
+  color: var(--primary-color);
+  font-weight: 400;
+}
+
+.highlight-lab {
+  color: var(--highlight-lab);
+}
+
+.highlight-senai {
+  color: var(--highlight-senai);
+}
+
+.main-content {
+  margin-bottom: 30px;
+}
+
+.main-content p {
+  font-size: 1.1em;
+  margin-bottom: 15px;
+}
+
+.main-content strong {
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.instruction {
+  font-size: 0.95em;
+  color: var(--secondary-color);
+  background-color: #e9ecef;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-top: 25px;
+  border-left: 5px solid var(--primary-color);
+}
+
+.footer {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #dee2e6;
+  font-size: 0.9em;
+  color: var(--secondary-color);
+  text-align: center;
+}
+
+/* Estilo para a lista de tarefas */
+.main-content ol.task-list {
+    text-align: left; /* Alinha o texto da lista à esquerda */
+    list-style-position: inside; /* Numeração dentro do padding do elemento */
+    padding-left: 20px; /* Recuo para a lista */
+    margin-bottom: 25px;
+}
+
+.main-content ol.task-list li {
+    margin-bottom: 8px;
+    font-size: 1.05em;
+    color: var(--text-color);
+}
+
+
+/* --- Estilos Específicos para o Exercício de Imagem --- */
+.image-gallery-section {
+    margin-top: 30px;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #f0f4f8; /* Um cinza claro para o fundo da seção */
+    border-radius: var(--border-radius);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05); /* Sombra interna sutil */
+    display: flex; /* Para alinhar imagem principal e botoes */
+    flex-direction: column;
+    align-items: center;
+}
+
+#imagemExibida {
+    width: 100%; /* Ocupa 100% da largura da sua div pai */
+    max-width: 400px; /* Limite máximo para a imagem */
+    height: 250px; /* Altura FIXA para a imagem principal */
+    object-fit: cover; /* Preenche o espaço cortando o excesso */
+    border: 3px solid var(--primary-color); /* Borda da cor primária */
+    border-radius: var(--border-radius);
+    margin-bottom: 25px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Animação ao trocar a imagem */
+    box-shadow: var(--box-shadow);
+}
+
+#imagemExibida:hover {
+    transform: scale(1.01); /* Leve zoom no hover */
+}
+
+.botoes-troca {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Espaçamento entre os botões */
+    flex-wrap: wrap; /* Quebra linha se a tela for pequena */
+    margin-top: 15px;
+}
+
+/* Estilo para o botão que contém a miniatura */
+.botao-miniatura {
+    padding: 0; /* Remove padding padrão do botão */
+    border: 2px solid transparent; /* Borda transparente inicial */
+    background: none; /* Remove fundo padrão do botão */
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    border-radius: 5px; /* Pequena borda arredondada para as miniaturas */
+    overflow: hidden; /* Garante que a imagem fique dentro do raio da borda */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    width: 70px; /* Largura do botão para conter a miniatura */
+    height: 50px; /* Altura do botão para conter a miniatura */
+    display: flex; /* Para centralizar a imagem dentro do botão se necessário */
+    align-items: center;
+    justify-content: center;
+}
+
+.botao-miniatura:hover {
+    transform: scale(1.05);
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    border-color: var(--primary-color); /* Borda azul no hover */
+}
+
+.botao-miniatura img {
+    display: block; /* Remove espaço extra abaixo da imagem */
+    width: 100%; /* Imagem preenche o botão */
+    height: 100%; /* Imagem preenche o botão */
+    object-fit: cover; /* Preenche o espaço sem distorcer */
+    border-radius: 3px; /* Levemente menor que o botão para encaixe */
+}
+
+
+/* --- Estilo para o Blockquote do Objetivo --- */
+.objective-highlight {
+    background-color: #e6f2ff; /* Um azul bem clarinho para o fundo */
+    border-left: 6px solid var(--primary-color); /* Borda lateral azul */
+    padding: 15px 20px;
+    margin: 25px auto; /* Centraliza e adiciona margem */
+    font-size: 1.15em;
+    color: var(--text-color);
+    line-height: 1.4;
+    font-style: italic; /* Geralmente blockquote tem um estilo inclinado */
+    text-align: left; /* Alinha o texto do objetivo à esquerda */
+    max-width: 600px; /* Limita a largura para melhor leitura */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-radius: var(--border-radius);
+}
+
+.objective-highlight strong {
+    color: var(--primary-color); /* Mantém o destaque da palavra "Objetivo" */
+    font-style: normal; /* Garante que 'Objetivo' não fique itálico */
+}
+
+
+/* Responsividade básica */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+  .header h1 {
+    font-size: 2em;
+  }
+  .header h2 {
+    font-size: 1.5em;
+  }
+  .main-content p {
+    font-size: 1em;
+  }
+  .botoes-troca {
+      gap: 8px;
+  }
+  .botao-miniatura {
+      width: 60px; /* Reduz tamanho da miniatura */
+      height: 40px;
+  }
+  .objective-highlight {
+      font-size: 1em;
+      padding: 10px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 1.8em;
+  }
+  .header h2 {
+    font-size: 1.3em;
+  }
+  #imagemExibida {
+      height: 200px; /* Mantém uma altura razoável em telas menores */
+  }
+  .botoes-troca {
+      justify-content: space-around; /* Espalha os botões em telas menores */
+  }
+}
